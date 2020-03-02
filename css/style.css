@@ -1,0 +1,1056 @@
+/*-----------------------------------------------------------------------------------
+
+ Main Color   : #75DAB0 #C49B66 #73efcc
+ main Font    : Roboto , Rubik
+
+ Secondary Color : #73efcc
+
+-----------------------------------------------------------------------------------*/
+
+/* ----------------------------------------------------------------
+     [ 01 Start Basics ]
+-----------------------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  list-style: none;
+  word-wrap: break-word;
+}
+
+body {
+  color: #fff;
+  line-height: 1.3;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden !important;
+  height: 100%;
+}
+
+.vlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.vlines span {
+  display: block;
+  float: left;
+  width: 20%;
+  height: 100%;
+  border-right: 1px solid #eee;
+  opacity: 0.04;
+}
+
+section .container,
+header .container {
+  position: relative;
+  z-index: 3 !important;
+  opacity: 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.section.active .container {
+  opacity: 1;
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.section-head {
+  position: relative;
+  height: 140px;
+  text-align: left;
+}
+.section-head i {
+  position: absolute;
+  height: 140px;
+  width: 100px;
+  left: -20px;
+  top: 0;
+  border: 8px solid rgba(255, 255, 255, 0.05);
+  border-right: 0;
+  z-index: -1;
+}
+.section-head i:after,
+.section-head i:before {
+  content: "";
+  width: 8px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  position: absolute;
+  right: 0;
+}
+.section-head i:after {
+  bottom: 0;
+}
+.section-head i:before {
+  top: 0;
+}
+.section-head span {
+  font-size: 12px;
+  text-transform: capitalize;
+  letter-spacing: 4px;
+  color: #73efcc;
+  margin-bottom: 10px;
+}
+.section-head h3 {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 28px;
+}
+
+p {
+  font-size: 17px;
+  font-weight: 300;
+  font-family: "Roboto", sans-serif;
+  color: #ddd;
+  line-height: 2;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+span,
+a,
+a:hover {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.o-hidden {
+  overflow: hidden;
+}
+
+.position-re {
+  position: relative;
+}
+
+.full-width {
+  width: 100% !important;
+}
+
+.bg-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-fixed {
+  background-attachment: fixed;
+}
+
+.bg-dark {
+  background: #07070b !important;
+}
+
+.bg-dark2 {
+  background: #0e0f13 !important;
+}
+
+.valign {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/* ----------------------------------------------------------------
+     [ End Basics ]
+-----------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+     [ 02 Start Buttons ]
+-----------------------------------------------------------------*/
+.butn {
+  padding: 12px 35px;
+  border: 1px solid #fff;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  z-index: 2;
+}
+.butn i {
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  border: 1px solid #fff;
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  opacity: 0.4;
+}
+.butn span {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.butn-bg {
+  background-color: #fff;
+}
+.butn-bg:hover {
+  background-color: #73efcc;
+  border-color: #73efcc;
+}
+.butn-bg:hover span {
+  color: #fff;
+}
+.butn-bg span {
+  color: #222;
+}
+
+.butn-bg-color {
+  background-color: transparent;
+  border-color: #73efcc;
+}
+.butn-bg-color:hover {
+  background-color: #fff;
+  border-color: #fff;
+}
+.butn-bg-color:hover span {
+  color: #73efcc;
+}
+.butn-bg-color i {
+  border-color: #73efcc;
+}
+.butn-bg-color span {
+  color: #fff;
+}
+
+/* ----------------------------------------------------------------
+     [ End Buttons ]
+-----------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+     [ 03 Start Navbar ]
+-----------------------------------------------------------------*/
+.side-menu .icon-open {
+  display: inline-block;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  top: 30px;
+  right: 20px;
+  text-align: center;
+  color: #fff;
+  z-index: 9999;
+  cursor: pointer;
+}
+.side-menu .icon-open span {
+  width: 4px;
+  height: 4px;
+  margin-top: 23px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.side-menu .nav-menu {
+  position: fixed;
+  width: 100%;
+  height: 0;
+  background-color: rgba(7, 7, 11, 0.9);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.side-menu .nav-menu:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  z-index: -1;
+  background-color: rgba(7, 7, 11, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.side-menu .nav-menu .valign {
+  height: 100%;
+  z-index: 4;
+}
+.side-menu .nav-menu ul {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  opacity: 0;
+  -webkit-transform: translateY(30px);
+  transform: translateY(30px);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.side-menu .nav-menu li {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 20px 0;
+  color: #eee;
+}
+.side-menu .nav-menu li:last-of-type {
+  margin-bottom: 0;
+}
+.side-menu .nav-menu li:hover,
+.side-menu .nav-menu li.active {
+  color: #73efcc;
+}
+.side-menu .nav-menu .rights {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  color: #ccc;
+  font-size: 12px;
+  text-transform: uppercase;
+  opacity: 0;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+  -webkit-transition-delay: 0.8s;
+  transition-delay: 0.8s;
+}
+.side-menu .nav-menu .rights a {
+  color: #fff;
+}
+.side-menu .menu-open {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+.side-menu .menu-open:after {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+.side-menu .menu-open ul {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+.side-menu .menu-open .rights {
+  opacity: 0.7;
+}
+
+#pp-nav {
+  margin-top: -80px !important;
+}
+#pp-nav li {
+  margin: 10px;
+}
+#pp-nav li .active span {
+  opacity: 1;
+  background: #fff;
+  -webkit-transform: scale(2, 1);
+  transform: scale(2, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+#pp-nav span {
+  width: 10px;
+  height: 2px;
+  background: #eee;
+  border-radius: 0;
+  border: 0;
+  opacity: 0.2;
+  position: relative;
+}
+
+/* ----------------------------------------------------------------
+     [ End Navbar ]
+-----------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+     [ 04 Start Header ]
+-----------------------------------------------------------------*/
+.header .caption h5 {
+  margin-bottom: 30px;
+  letter-spacing: 12px;
+}
+.header .caption h1 {
+  font-size: 85px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+.header .caption p {
+  color: #fff;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  display: inline-block;
+  padding: 5px 50px;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(transparent),
+    color-stop(rgba(255, 255, 255, 0.1)),
+    to(transparent)
+  );
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  margin-top: 30px;
+}
+.header .caption .butn {
+  margin-top: 30px;
+}
+.header .social {
+  display: none;
+  position: absolute;
+  bottom: 5vh;
+  left: 4vw;
+}
+.header .social a {
+  font-size: 11px;
+  margin: 0 15px;
+  color: #ccc;
+}
+.header .social a:hover {
+  color: #fff;
+}
+
+/* ----------------------------------------------------------------
+     [ End Header ]
+-----------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+     [ 05 Start Hero ]
+-----------------------------------------------------------------*/
+.hero .hero-img {
+  position: relative;
+}
+.hero .hero-img:after {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 100%;
+  height: calc(100% + 60px);
+  border: 10px solid #f7f7f7;
+  opacity: 0;
+}
+.hero .hero-img img {
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+}
+.hero .cont {
+  padding-left: 30px;
+}
+.hero h5 {
+  color: #73efcc;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.hero h2 {
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  position: relative;
+}
+.hero h2:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: #73efcc;
+}
+.hero p {
+  margin-bottom: 40px;
+}
+.hero .social-icon a {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #888;
+  margin-right: 10px;
+}
+.hero .social-icon a:hover {
+  background: #73efcc;
+  border-color: #73efcc;
+  color: #fff;
+}
+
+/* ----------------------------------------------------------------
+     [ End Hero ]
+-----------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+     [ 06 Start Expertises ]
+-----------------------------------------------------------------*/
+.expertises .nav-tabs {
+  border: 0;
+}
+.expertises .nav-tabs li {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.expertises .nav-tabs li:last-of-type {
+  margin-bottom: 0;
+}
+.expertises .nav-tabs li a {
+  display: block;
+  padding: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.expertises .nav-tabs li a .icon {
+  color: #73efcc;
+  position: relative;
+  margin-right: 60px;
+}
+.expertises .nav-tabs li a .icon:after {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+}
+.expertises .nav-tabs li .active {
+  background: #07070b;
+  -webkit-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+.expertises .skills h5 {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 60px;
+}
+.expertises .skills h5 .icon {
+  color: #73efcc;
+  margin-right: 10px;
+}
+.expertises .skills .skill-item h6 {
+  font-size: 12px;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+.expertises .skills .skill-item .skill-progress {
+  height: 12px;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+.expertises .skills .skill-item .skill-progress .progres {
+  position: absolute;
+  height: 100%;
+  width: 0;
+  top: 0;
+  left: 0;
+  border-radius: 2px;
+  background-color: #73efcc;
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 10rem 10rem;
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+}
+.expertises .skills .skill-item .skill-progress .progres:after {
+  content: attr(data-value);
+  position: absolute;
+  right: 0;
+  top: -25px;
+  font-size: 10px;
+}
+.expertises .exp ul,
+.expertises .edu ul {
+  padding-left: 30px;
+  border-left: 1px dashed rgba(255, 255, 255, 0.2);
+}
+.expertises .exp li,
+.expertises .edu li {
+  margin-bottom: 50px;
+}
+.expertises .exp li:last-of-type,
+.expertises .edu li:last-of-type {
+  margin-bottom: 0;
+}
+.expertises .exp .date,
+.expertises .edu .date {
+  font-size: 13px;
+  font-weight: 300;
+  padding: 5px 15px;
+  background: transparent;
+  border: 1px solid #73efcc;
+  margin-bottom: 15px;
+}
+.expertises .exp h6,
+.expertises .edu h6 {
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+.expertises .exp h6::after,
+.expertises .edu h6::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 6px solid #0e0f13;
+  background: #73efcc;
+  position: absolute;
+  top: 0;
+  left: -38px;
+}
+.expertises .exp p,
+.expertises .edu p {
+  font-size: 14px;
+}
+
+/* ----------------------------------------------------------------
+     [ End Expertises ]
+-----------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+     [ 07 Start Services ]
+-----------------------------------------------------------------*/
+.services .arrows {
+  margin-top: 30px;
+}
+.services .arrows li {
+  float: left;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border: 1px solid #eee;
+  cursor: pointer;
+}
+.services .slick-center {
+  background-color: #0e0f13;
+}
+.services .item {
+  padding: 30px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+.services .item .icon {
+  float: left;
+  text-align: center;
+  color: #73efcc;
+  font-size: 40px;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+}
+.services .item .cont {
+  margin-left: 100px;
+}
+.services .item h6 {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 16px;
+}
+.services .item p {
+  font-size: 15px;
+}
+
+/* ----------------------------------------------------------------
+     [ End Services ]
+-----------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+     [ 08 Start Portfolio ]
+-----------------------------------------------------------------*/
+.portfolio .filtering .filter {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.portfolio .filtering span {
+  color: #eee;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.portfolio .filtering span:after {
+  content: "";
+  width: 0px;
+  height: 2px;
+  background-color: #73efcc;
+  position: absolute;
+  top: 6px;
+  right: -50px;
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.portfolio .filtering .active {
+  color: #73efcc;
+}
+.portfolio .filtering .active:after {
+  opacity: 1;
+  width: 30px;
+}
+.portfolio .items {
+  padding: 0 10px;
+  margin-top: 20px;
+}
+.portfolio .item-img {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.portfolio .item-img:hover .item-img-overlay {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+.portfolio .item-img-overlay {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  padding: 30px;
+  background-color: #73efcc;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: rotateY(90deg);
+  transform: rotateY(90deg);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.portfolio .item-img-overlay .icon {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+}
+.portfolio .item-img-overlay h6 {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ----------------------------------------------------------------
+     [ End Portfolio ]
+-----------------------------------------------------------------*/
+
+/* ----------------------------------------------------------------
+     [ 12 Start Contact ]
+-----------------------------------------------------------------*/
+.contact .contact-info .item {
+  margin-top: 30px;
+}
+.contact .contact-info .item .icon {
+  float: left;
+  font-size: 25px;
+  color: #73efcc;
+}
+.contact .contact-info .item .cont {
+  margin-left: 50px;
+}
+.contact .contact-info .item .cont h6 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.contact .contact-info .item .cont p {
+  font-size: 14px;
+}
+.contact .form {
+  margin-top: 50px;
+}
+.contact .form input,
+.contact .form textarea {
+  color: #fff;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.contact .form input:focus,
+.contact .form textarea:focus {
+  border-color: transparent;
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+.contact .form textarea {
+  height: 140px;
+  max-height: 140px;
+  max-width: 100%;
+}
+.contact .form .butn {
+  width: 100%;
+  cursor: pointer;
+}
+.contact .form .butn span {
+  font-weight: 500;
+}
+
+/* ----------------------------------------------------------------
+     [ End Contact ]
+-----------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+ 	 [ 13 Responsive ]
+-----------------------------------------------------------------*/
+@media screen and (min-width: 1300px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .mb-md100 {
+    margin-bottom: 100px;
+  }
+
+  .mb-md50 {
+    margin-bottom: 50px;
+  }
+
+  .mb-md30 {
+    margin-bottom: 30px;
+  }
+
+  .mb-md0 {
+    margin-bottom: 0;
+  }
+
+  .mt-md100 {
+    margin-top: 100px;
+  }
+
+  .mt-md50 {
+    margin-top: 50px;
+  }
+
+  .mt-md30 {
+    margin-top: 30px;
+  }
+
+  .mt-md0 {
+    margin-top: 0;
+  }
+
+  body,
+  html {
+    overflow: auto !important;
+    height: auto;
+  }
+
+  .section {
+    padding: 120px 0;
+    position: relative;
+  }
+
+  .section .container,
+  .section.active .container {
+    opacity: 1;
+  }
+
+  .hide-md {
+    display: none !important;
+  }
+
+  .header {
+    position: relative;
+    padding: 0;
+    height: 100vh;
+    background-position: center center !important;
+  }
+  .header .vlines {
+    display: none;
+  }
+
+  .hero .cont {
+    padding-left: 0;
+  }
+
+  .services .item {
+    background-color: #0e0f13;
+  }
+
+  .services {
+    padding-bottom: 110px;
+  }
+
+  .portfolio .filtering br {
+    display: none;
+  }
+  .portfolio .filtering span {
+    margin: 0 15px;
+    cursor: pointer;
+  }
+  .portfolio .filtering span:after {
+    left: calc(50% - 15px);
+  }
+}
+@media screen and (max-width: 767px) {
+  .mb-sm100 {
+    margin-bottom: 100px;
+  }
+
+  .mb-sm50 {
+    margin-bottom: 50px;
+  }
+
+  .mb-sm30 {
+    margin-bottom: 30px;
+  }
+
+  .mb-sm0 {
+    margin-bottom: 0;
+  }
+
+  .mt-sm100 {
+    margin-top: 100px;
+  }
+
+  .mt-sm50 {
+    margin-top: 50px;
+  }
+
+  .mt-sm30 {
+    margin-top: 30px;
+  }
+
+  .mt-sm0 {
+    margin-top: 0;
+  }
+
+  .side-menu li {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1;
+    margin-bottom: 10px;
+  }
+
+  .side-menu .icon-open {
+    right: 20px;
+    top: 20px;
+    font-size: 25px;
+  }
+
+  .header .caption h1 {
+    font-size: 60px;
+  }
+
+  .header .caption p {
+    padding: 5px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .mb-xs50 {
+    margin-bottom: 50px;
+  }
+
+  .mb-xs30 {
+    margin-bottom: 30px;
+  }
+
+  .mb-xs0 {
+    margin-bottom: 0;
+  }
+
+  .section-head i {
+    left: 0;
+  }
+
+  .section-head h3 {
+    font-size: 24px;
+  }
+
+  .header .caption h5 {
+    font-size: 16px;
+  }
+
+  .header .caption h1 {
+    font-size: 28px;
+  }
+
+  .header .caption p {
+    letter-spacing: 1px;
+    font-size: 14px;
+  }
+
+  .hero h5 {
+    font-size: 16px;
+  }
+
+  .hero h2 {
+    font-size: 25px;
+  }
+
+  .services .item .icon {
+    float: none;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  .services .item .cont {
+    margin-left: 0;
+  }
+
+  .portfolio .filtering span {
+    margin: 0 10px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
